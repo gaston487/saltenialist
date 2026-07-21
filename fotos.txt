@@ -2,6 +2,6 @@
 # Las líneas que empiezan con # son comentarios y se ignoran
 # Separá los campos con el símbolo |
 
-https://i.ibb.co/N2w3hHG6/Saltenialist-01.webp | Pensando espero | Centro de Salta
-https://i.ibb.co/qYTqXfQ9/Saltenialist-15.webp | Random | Ahí por la San Martín
-https://i.ibb.co/r2r15Z68/Saltenialist-17.webp | Random | Ahí por la San Martín
+https://i.ibb.co/5xLvd3n6/Saltenialist-01.jpg | Pensando espero | Centro de Salta
+https://i.ibb.co/fY7p3fYB/Saltenialist-15.jpg | Random | Ahí por la San Martín
+https://i.ibb.co/HL74dPhS/Saltenialist-31.jpg | Random | Ahí por la San Martín
