@@ -2,5 +2,6 @@
 # Las líneas que empiezan con # son comentarios y se ignoran
 # Separá los campos con el símbolo |
 
-https://i.ibb.co/kV21kzhg/Autorretrato-1-de-3.jpg | Autorretrato en la plaza | 2026-04-13
-https://i.ibb.co/XXXXXXX/ejemplo.jpg | Cerro San Bernardo al atardecer | 2026-05-20
+https://ibb.co/hFpM5tTR | Pensando espero | Centro de Salta
+https://ibb.co/GQzYBLSk | Random | Ahí por la San Martín
+https://ibb.co/tprWYbsj | Random | Ahí por la San Martín
