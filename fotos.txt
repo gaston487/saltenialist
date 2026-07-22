@@ -2,11 +2,5 @@
 # Las líneas que empiezan con # son comentarios y se ignoran
 # Separá los campos con el símbolo |
 
-https://i.ibb.co/5xLvd3n6/Saltenialist-01.jpg | Pensando espero | Centro de Salta
-https://i.ibb.co/fY7p3fYB/Saltenialist-15.jpg | Random | Ahí por la San Martín
-https://i.ibb.co/HL74dPhS/Saltenialist-31.jpg | Random | Ahí por la San Martín
-https://i.ibb.co/MyQq3Sn0/Saltenialist-11.jpg | Amarillo | Ahí por la San Martín
-https://i.ibb.co/9HwpZS8m/Saltenialist-61.jpg | Random | Ahí por la San Martín
-https://i.ibb.co/chTwMdm1/Saltenialist-68.jpg | Random | Ahí por la San Martín
-https://i.ibb.co/1JY43FsY/Saltenialist-70.jpg | Random | Ahí por la San Martín
-https://i.ibb.co/dJ3vFksd/Saltenialist-92.jpg | Random | Ahí por la San Martín
+https://i.ibb.co/kV21kzhg/Autorretrato-1-de-3.jpg | Autorretrato en la plaza | 2026-04-13
+https://i.ibb.co/XXXXXXX/ejemplo.jpg | Cerro San Bernardo al atardecer | 2026-05-20
