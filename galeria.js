@@ -1,4 +1,4 @@
-// galeria.js — Lee fotos.txt y genera la galería
+// galeria.js — Lee fotos.txt y genera la galería con lightbox
 
 document.addEventListener('DOMContentLoaded', async () => {
     const contenedor = document.getElementById('galeria-contenedor');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         // Fetch del archivo de configuración
         const respuesta = await fetch('fotos.txt');
-        
+
         if (!respuesta.ok) {
             throw new Error(`No se pudo cargar fotos.txt (${respuesta.status})`);
         }
@@ -56,6 +56,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>
             `;
 
+            // Click para abrir lightbox
+            tarjeta.querySelector('img').addEventListener('click', () => {
+                abrirLightbox(url, descripcion, fecha);
+            });
+
             grid.appendChild(tarjeta);
         });
 
@@ -67,3 +72,48 @@ document.addEventListener('DOMContentLoaded', async () => {
         estado.style.color = '#a44';
     }
 });
+
+// ========================
+// LIGHTBOX
+// ========================
+
+function abrirLightbox(url, descripcion, fecha) {
+    // Crear overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'lightbox-overlay';
+    overlay.innerHTML = `
+        <div class="lightbox-contenido">
+            <span class="lightbox-cerrar">&times;</span>
+            <img src="${url}" alt="${descripcion}">
+            <div class="lightbox-info">
+                ${fecha ? `<span class="lightbox-fecha">${fecha}</span>` : ''}
+                <p class="lightbox-desc">${descripcion}</p>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden'; // Evitar scroll
+
+    // Cerrar al hacer clic en la X
+    overlay.querySelector('.lightbox-cerrar').addEventListener('click', cerrarLightbox);
+    // Cerrar al hacer clic fuera de la imagen
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) cerrarLightbox();
+    });
+    // Cerrar con Escape
+    document.addEventListener('keydown', manejarTecla);
+}
+
+function cerrarLightbox() {
+    const overlay = document.getElementById('lightbox-overlay');
+    if (overlay) {
+        overlay.remove();
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', manejarTecla);
+    }
+}
+
+function manejarTecla(e) {
+    if (e.key === 'Escape') cerrarLightbox();
+}
