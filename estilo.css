@@ -14,6 +14,11 @@ body {
     word-wrap: break-word;
 }
 
+/* Ancho más grande para la galería */
+body.galeria-page {
+    max-width: 1100px;
+}
+
 /* 2. Títulos y Subtítulo */
 header {
     margin-bottom: 50px;
@@ -119,7 +124,7 @@ article p {
 }
 
 /* ============================================
-   7. GALERÍA DE FOTOS — ESTOS FALTABAN
+   7. GALERÍA DE FOTOS
    ============================================ */
 
 .galeria-grid {
