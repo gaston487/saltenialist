@@ -4,11 +4,11 @@
 
 /* 1. Configuración General y Colores */
 body {
-    background-color: #111;    /* Fondo negro suave */
-    color: #999;               /* Texto gris para lectura descansada */
+    background-color: #111;
+    color: #999;
     font-family: 'Courier New', Courier, monospace;
     line-height: 1.6;
-    max-width: 650px;          /* Ancho clásico de bitácora */
+    max-width: 650px;
     margin: 60px auto;
     padding: 0 20px;
     word-wrap: break-word;
@@ -20,7 +20,7 @@ header {
 }
 
 .site-title {
-    color: #eee;               /* Casi blanco para el título */
+    color: #eee;
     text-decoration: none;
     font-size: 1.6rem;
     font-weight: bold;
@@ -29,26 +29,31 @@ header {
 }
 
 .subtitle {
-    color: #666;               /* Más tenue para el subtítulo */
+    color: #666;
     font-size: 0.95rem;
     margin: 0 0 30px 0;
     line-height: 1.4;
 }
 
 /* 3. La Foto de Portada (Autorretrato) */
+.link-portada {
+    display: block;
+    text-decoration: none;
+}
+
 .img-portada {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 30px 0;
-    filter: grayscale(100%);   /* Estética B&N por defecto */
+    filter: grayscale(100%);
     opacity: 0.8;
     transition: all 0.4s ease;
-    border: 1px solid #222;    /* Un borde sutil */
+    border: 1px solid #222;
 }
 
-.img-portada:hover {
-    filter: none;              /* Recupera el color al pasar el mouse */
+.link-portada:hover .img-portada {
+    filter: none;
     opacity: 1;
     border-color: #444;
 }
@@ -85,8 +90,8 @@ nav a:hover {
 }
 
 .post-date {
-    min-width: 120px;          /* Esto alinea todos los títulos verticalmente */
-    color: #444;               /* Fecha en gris oscuro, casi mimetizada */
+    min-width: 120px;
+    color: #444;
     font-size: 0.9rem;
 }
 
@@ -113,25 +118,72 @@ article p {
     margin-bottom: 20px;
 }
 
-/* 7. Responsivo (Para que en el celu se vea bien) */
-@media (max-width: 500px) {
-    body {
-        margin: 30px auto;
-    }
-    
-    .post-list li {
-        flex-direction: column; /* La fecha queda arriba del título en el celu */
-        margin-bottom: 25px;
-    }
-    
-    .post-date {
-        margin-bottom: 5px;
-        font-size: 0.8rem;
-    }
+/* ============================================
+   7. GALERÍA DE FOTOS — ESTOS FALTABAN
+   ============================================ */
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.tarjeta-foto {
+    background: #1a1a1a;
+    border: 1px solid #222;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.tarjeta-foto:hover {
+    border-color: #444;
+}
+
+.tarjeta-foto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+    opacity: 0.85;
+    transition: all 0.4s ease;
+}
+
+.tarjeta-foto:hover img {
+    filter: none;
+    opacity: 1;
+}
+
+.tarjeta-info {
+    padding: 12px 15px;
+}
+
+.tarjeta-info .fecha {
+    color: #555;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.tarjeta-info .descripcion {
+    color: #bbb;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Estado de carga / error */
+#galeria-estado {
+    color: #666;
+    font-style: italic;
+    padding: 40px 0;
+    text-align: center;
 }
 
 /* ============================================
-   LIGHTBOX — Vista completa de fotos
+   8. LIGHTBOX — Vista completa de fotos
    ============================================ */
 
 #lightbox {
@@ -184,7 +236,23 @@ article p {
     color: #eee;
 }
 
-/* La tarjeta entera es clickeable */
-.tarjeta-foto {
-    cursor: pointer;
+/* 9. Responsivo */
+@media (max-width: 500px) {
+    body {
+        margin: 30px auto;
+    }
+
+    .post-list li {
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    .post-date {
+        margin-bottom: 5px;
+        font-size: 0.8rem;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
 }
